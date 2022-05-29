@@ -2,7 +2,21 @@
 -  name: mylocalimage
    hosts: localhost
    become: true
-   
+   pre_tasks:
+    - name: set version
+      set_fact: codename="{{ ansible_lsb.codename }}"
+    - name: Update repositories cache and install packages
+      apt:
+        name: [
+        apt-transport-https, 
+        ca-certificates,
+        curl,
+        gnupg-agent,
+        software-properties-common
+        ]
+        update_cache: yes
+      retries: 3
+      
    vars:
       ssh_key_filename: id_rsa_github
    vars_prompt:
@@ -12,6 +26,21 @@
    tasks:
      - name: install git 
        include_tasks: tasks/git.yaml
-   tasks:
      - name: install git keygen 
        include_tasks: tasks/github_keygen.yaml
+     - name: install chrome
+       include_tasks: tasks/chrome.yaml
+     - name: install java
+       include_tasks: tasks/java.yaml
+     - name: install netbeans
+       include_tasks: tasks/netbeans.yaml
+     - name: install tomcat
+       include_tasks: tasks/tomcat.yaml
+     - name: install maven
+       include_tasks: tasks/maven.yaml
+     - name: install apache2
+       include_tasks: tasks/apache2.yaml
+     - name: install postman
+       include_tasks: tasks/postman.yaml
+     - name: install docker
+       include: tasks/docker.yaml

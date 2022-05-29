@@ -1,0 +1,4 @@
+- name: install postman
+  snap:
+    name: postman
+    classic: yes

@@ -21,3 +21,14 @@ ansible scripts to make up my ubuntu image
 ### run ansible 
     sudo ansible-playbook myimage.yaml 
 
+### current tasks 
+    install git 
+    if no ssh keys present, generate keys in ~/.ssh folder
+    install chrome
+    install jdk
+    install netbeans
+    install tomcat
+    install apache2
+    install maven
+    install postman
+    install docker
