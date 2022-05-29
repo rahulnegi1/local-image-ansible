@@ -1,0 +1,7 @@
+---
+-  name: mylocalimage
+   hosts: localhost
+   become: true
+   tasks:
+     - name: install git 
+       include: tasks/git.yaml
