@@ -5,3 +5,5 @@
       size: 4096
       state: present
       force: no
+      owner: rahul
+      group: rahul
