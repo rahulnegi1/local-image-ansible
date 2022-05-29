@@ -2,6 +2,16 @@
 -  name: mylocalimage
    hosts: localhost
    become: true
+   
+   vars:
+      ssh_key_filename: id_rsa_github
+   vars_prompt:
+    - name: "ssh_passphrase"
+      prompt: "Enter the passphrase for the SSH key"
+   
    tasks:
      - name: install git 
-       include: tasks/git.yaml
+       include_tasks: tasks/git.yaml
+   tasks:
+     - name: install git keygen 
+       include_tasks: tasks/github_keygen.yaml
