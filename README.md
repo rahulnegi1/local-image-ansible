@@ -21,3 +21,7 @@ ansible scripts to make up my ubuntu image
 ### run ansible 
     sudo ansible-playbook myimage.yaml 
 
+### current tasks 
+    install git 
+    if no ssh keys present, generate keys in ~/.ssh folder
+    install chrome
