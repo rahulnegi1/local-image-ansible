@@ -25,3 +25,8 @@ ansible scripts to make up my ubuntu image
     install git 
     if no ssh keys present, generate keys in ~/.ssh folder
     install chrome
+    install jdk
+    install netbeans
+    install tomcat
+    install apache
+    install maven

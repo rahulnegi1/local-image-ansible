@@ -1,0 +1,11 @@
+- name: netbeans repo
+  apt_repository:
+    repo: "deb http://archive.ubuntu.com/ubuntu focal universe"
+    update_cache: yes
+- name: install snap
+  apt:
+    name: snapd
+- name: install netbeans
+  snap:
+    name: netbeans
+    classic: yes
