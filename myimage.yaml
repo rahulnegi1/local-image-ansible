@@ -26,18 +26,19 @@
    tasks:
      - name: install git 
        include_tasks: tasks/git.yaml
-   tasks:
      - name: install git keygen 
        include_tasks: tasks/github_keygen.yaml
-   tasks:
      - name: install chrome
        include_tasks: tasks/chrome.yaml
-   tasks:
      - name: install java
        include_tasks: tasks/java.yaml
-   tasks:
      - name: install netbeans
        include_tasks: tasks/netbeans.yaml
-   tasks:
      - name: install tomcat
        include_tasks: tasks/tomcat.yaml
+     - name: install maven
+       include_tasks: tasks/maven.yaml
+     - name: install apache2
+       include_tasks: tasks/apache2.yaml
+     - name: install postman
+       include_tasks: tasks/postman.yaml

@@ -28,5 +28,6 @@ ansible scripts to make up my ubuntu image
     install jdk
     install netbeans
     install tomcat
-    install apache
+    install apache2
     install maven
+    install postman
