@@ -1,0 +1,37 @@
+- name: focal docker key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+- name: docker repository
+  apt_repository: 
+    repo: "deb https://download.docker.com/linux/ubuntu/ focal stable"
+    update_cache: yes
+- name: install docker
+  apt:
+    name:
+      [
+        docker-ce, 
+        docker-ce-cli, 
+        containerd.io
+      ]
+    update_cache: yes
+    state: present
+- name: get the user running the script
+  set_fact:
+    login: "{{ ansible_env['SUDO_USER'] }}"
+
+- name: adding user '{{ login }}' to 'docker' group
+  user:
+    name: '{{ login }}'
+    groups: docker
+    append: yes
+
+- name: install docker-compose
+  get_url:
+    url:  https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: '755'
+
+- name: clean test image
+  shell: ./clean-test-docker.sh || true
+  become: no

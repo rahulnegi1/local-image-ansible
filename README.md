@@ -31,3 +31,4 @@ ansible scripts to make up my ubuntu image
     install apache2
     install maven
     install postman
+    install docker

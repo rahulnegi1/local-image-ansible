@@ -42,3 +42,5 @@
        include_tasks: tasks/apache2.yaml
      - name: install postman
        include_tasks: tasks/postman.yaml
+     - name: install docker
+       include: tasks/docker.yaml
